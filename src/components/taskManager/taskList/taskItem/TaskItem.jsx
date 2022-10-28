@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
+import { ListGroupItem } from "reactstrap";
 
-const TaskItem = () => {
-  return (
-    <div>TaskItem</div>
-  )
-}
+const TaskItem = ({ allTasks }) => {
+  
+  <ListGroupItem>{allTasks}</ListGroupItem> ;
+};
 
-export default TaskItem
+export default TaskItem;
