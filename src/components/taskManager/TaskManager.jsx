@@ -11,6 +11,7 @@ const TaskManager = () => {
     new Task(3, "learn Ruby"),
     new Task(4, "Learn rails"),
     new Task(5, "Gym in the evening"),
+    
   ];
   return (
     <>
@@ -20,8 +21,7 @@ const TaskManager = () => {
         </Col>
         <Col>
         <h3>TaskList</h3>
-        {tasks.map((task) => <TaskList key={task.id} task={task}/>)}
-          
+         <TaskList  tasks={tasks}/> 
         </Col>
       </Row>
     </>
