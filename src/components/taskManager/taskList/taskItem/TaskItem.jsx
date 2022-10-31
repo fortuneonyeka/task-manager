@@ -1,9 +1,14 @@
 import React from "react";
-import { ListGroupItem } from "reactstrap";
+import { ListGroupItem, CloseButton } from "reactstrap";
 
-const TaskItem = ({ allTasks }) => {
-  
-  <ListGroupItem>{allTasks}</ListGroupItem> ;
+const TaskItem = ({task}) => {
+ return(
+  <ListGroupItem>
+   
+    {task.title}
+    <CloseButton className="float-end"/>
+    </ListGroupItem> 
+ )
 };
 
 export default TaskItem;
