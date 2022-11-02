@@ -5,8 +5,10 @@ class TaskForm extends Component  {
 
 
   state = {
-    titleError: "",
-    descriptionErr: ""
+    titleErr: "",
+    descriptionErr: "",
+    title: "",
+    description: ""
   }
    
     
@@ -16,19 +18,19 @@ class TaskForm extends Component  {
    handleSubmit = (e) => {
     e.preventDefault()
     let valid = true
-    const title = document.getElementById("title")
-    const description = document.getElementById("description")
+   
+    const {title, description} = this.state
 
 
-if (title.value === "" || title.value.length < 5) {
+if (title === "" || title.length < 5) {
   this.setState({
-    titleError:`title cannot be blank or less than five (${5}) characters`
+    titleErr:`title cannot be blank or less than five (${5}) characters`
   }) 
  
   valid = false
 }
 
-if (description.value === "" || description.value.length < 10) {
+if (description === "" || description.length < 10) {
   this.setState({
     descriptionErr:`Description cannot be blank or less than ten (${(10)}) characters`
   
@@ -39,15 +41,16 @@ if (description.value === "" || description.value.length < 10) {
 
     if (valid) {
       const data = {
-        title:title.value,
-        description:description.value
+        title,
+        description
       }
         this.props.addTask(data)
 
       this.setState(
         {
-          
-          titleError:"",
+          title:"",
+          description:"",
+          titleErr:"",
           descriptionErr:""
         }
       )
@@ -62,22 +65,29 @@ if (description.value === "" || description.value.length < 10) {
       color:"red",
       fontSize:"12px"
     }
+          handleChange = (e) => {
+            this.setState({
+              [e.target.id]: e.target.value,
+              [e.target.id + "Err"]: ""
+            })
+          }
+
 
     render() {
-      const {titleError, descriptionErr} = this.state
+      const {titleErr, descriptionErr, title, description} = this.state
       return (
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit} >
            <FormGroup row>
              <Label htmlFor="title"><h4>Title</h4></Label>
              <Col sm={8}>
-             <Input id="title" type="text" placeholder="Task Titile"/>
+             <Input id="title" type="text" placeholder="Task Titile" value={title}  onChange={this.handleChange}/>
              </Col>
-             <span id="titleErr" style={this.errStyle}>{titleError}</span>
+             <span id="titleErr" style={this.errStyle}>{titleErr}</span>
            </FormGroup>
            <FormGroup>
              <Label htmlFor="description"><h4>Description</h4></Label>
              <Col sm={8}>
-             <Input id="description" type="textarea" placeholder="Task Description" rows="5"/>
+             <Input id="description" type="textarea" placeholder="Task Description" rows="5" value={description} onChange={this.handleChange}/>
              </Col>
              <span id="descriptionErr" style={this.errStyle}>{descriptionErr}</span>
            </FormGroup>
