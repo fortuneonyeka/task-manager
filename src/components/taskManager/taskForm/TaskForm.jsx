@@ -21,7 +21,7 @@ class TaskForm extends Component  {
    
     const {title, description} = this.state
 
-
+//Validating the form inputs
 if (title === "" || title.length < 5) {
   this.setState({
     titleErr:`title cannot be blank or less than five (${5}) characters`
@@ -46,6 +46,7 @@ if (description === "" || description.length < 10) {
       }
         this.props.addTask(data)
 
+        //setting the input state back to blank after submission
       this.setState(
         {
           title:"",
@@ -60,7 +61,7 @@ if (description === "" || description.length < 10) {
     }
 
 
-
+//Styling the error messages
      errStyle = {
       color:"red",
       fontSize:"12px"
