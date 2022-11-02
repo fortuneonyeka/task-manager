@@ -13,11 +13,16 @@ const TaskManager = () => {
     new Task(5, "Gym in the evening"),
     
   ];
+
+  const addTask = (data) => {
+    console.log(data);
+  }
+
   return (
     <>
       <Row>
         <Col>
-          <TaskForm />
+          <TaskForm addTask={addTask}/>
         </Col>
         <Col>
         <h3>TaskList</h3>
