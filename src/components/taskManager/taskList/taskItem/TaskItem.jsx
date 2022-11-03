@@ -6,7 +6,7 @@ const TaskItem = ({ task }) => {
     <>
       <ListGroupItem>
         {task.title}
-        <CloseButton className="float-end" />
+        <CloseButton className="float-end bg-danger p-2" />
       </ListGroupItem>
     </>
   );
