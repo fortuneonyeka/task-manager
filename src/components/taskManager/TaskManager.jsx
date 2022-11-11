@@ -3,23 +3,13 @@ import TaskForm from "./taskForm/TaskForm";
 import TaskList from "./taskList/TaskList";
 import {  Row, Col } from "reactstrap";
 import Task from "../models/Task";
-
-
+import {useDispatch} from "react-redux"
+import {addAction} from "../../Redux/actions/TaskManagerActions"
 class TaskManager extends Component  {
 
-  state = {
-    tasks : [
-      new Task(1, "code all day"),
-      new Task(2, "Learn React"),
-      new Task(3, "learn Ruby"),
-      new Task(4, "Learn rails"),
-      new Task(5, "Gym in the evening"),
-      
-    ]
-  }
-   
+  // taskAll = useSelector(state => state.tasks)
+  // dispatch = useDispatch()
   
-
    addTask = (data) => {
     const task = new Task(
       this.state.tasks.length + 1,
@@ -34,13 +24,13 @@ class TaskManager extends Component  {
   render() {
     return (
       <>
-        <Row>
+        <Row className="task-manager-container">
           <Col>
-            <TaskForm addTask={this.addTask}/>
+            <TaskForm />
           </Col>
           <Col>
           <h3>TaskList</h3>
-           <TaskList  tasks={this.state.tasks}/> 
+           <TaskList /> 
           </Col>
         </Row>
       </>

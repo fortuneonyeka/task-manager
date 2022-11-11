@@ -2,7 +2,6 @@ import React from "react";
 import { ListGroupItem, CloseButton } from "reactstrap";
 
 const TaskItem = ({ task }) => {
-
   return (
     <>
       <ListGroupItem>
