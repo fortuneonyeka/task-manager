@@ -3,7 +3,8 @@ import { taskReducer } from "./TaskReducer"
 
 
 const rootReducer = combineReducers({
-  tasks:taskReducer
+  tasks:taskReducer,
+  user: () => null
 })
 
 export default rootReducer
