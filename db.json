@@ -1,0 +1,53 @@
+{
+  "tasks" : [
+  {
+    "id": 1,
+    "title": "Learn JSON",
+    "description": "Building dummy json API",
+    "completed" : false,
+    "data": "2022- 11- 14"
+
+  },
+  {
+    "id": 2,
+    "title": "Learn REACT",
+    "description": "Learning React",
+    "completed" : false,
+    "data": "2022- 11- 14"
+
+  },
+  {
+    "id": 3,
+    "title": "Learn REDUX",
+    "description": "Learning Redux",
+    "completed" : false,
+    "data": "2022- 11- 15"
+
+  },
+  {
+    "id": 4,
+    "title": "Learn AXIOS",
+    "description": "Learning Axios",
+    "completed" : false,
+    "data": "2022- 11- 15"
+
+  }
+],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
